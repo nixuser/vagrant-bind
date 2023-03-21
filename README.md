@@ -16,3 +16,10 @@ A Bind's DNS lab with Vagrant and Ansible, based on CentOS 7.
   * client (192.168.50.15)
     * used to test the env, runs rndc and nsupdate
   * zone transfer: TSIG key
+
+
+Example how to add keys to ssh-agent
+```
+vagrant ssh-config |  grep IdentityFile  | cut -f 4 -d ' ' | xargs ssh-add
+vagrant ssh client -- -A
+```

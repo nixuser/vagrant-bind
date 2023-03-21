@@ -2,17 +2,17 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "centos/7"
+  config.vm.box = "almalinux/9"
 
-  config.vm.provision "ansible" do |ansible|
-    ansible.verbose = "vvv"
-    ansible.playbook = "provisioning/playbook.yml"
-    ansible.sudo = "true"
-  end
+  #config.vm.provision "ansible" do |ansible|
+  #  ansible.verbose = "vvv"
+  #  ansible.playbook = "provisioning/playbook.yml"
+  #  ansible.sudo = "true"
+  #end
 
 
   config.vm.provider "virtualbox" do |v|
-	  v.memory = 256
+	  v.memory = 1024
   end
 
   config.vm.define "ns01" do |ns01|
